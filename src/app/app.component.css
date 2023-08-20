@@ -1,0 +1,257 @@
+.main-info .button:hover {
+    background: linear-gradient(135deg, #D3320F 0%, #DA8023 100%);
+    font-weight: 600;
+}
+
+.header {
+    padding: 40px 0px;
+}
+
+.main {
+    overflow: hidden;
+    background: url("../assets/images/main_bg.png") no-repeat top center;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    vertical-align: bottom;
+}
+
+.menu {
+    margin-left: 191px;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-item {
+    margin-right: 88px;
+    transition: 1s;
+}
+
+.menu-item:hover {
+    transform: scale(1.2);
+}
+
+.menu-item a:hover {
+    border-bottom: 2px solid #F2B64C;
+    color: #F2B64C;
+
+}
+
+.menu-item a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.currency {
+    cursor: pointer;
+    font-size: 18px;
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: 0.4s;
+}
+
+.currency:hover {
+    color: #D3320F;
+    border: 2px solid #F2B64C;
+    font-size: 26px;
+}
+
+.main-content {
+    padding-top: 103px;
+    padding-bottom: 199px;
+}
+
+.main-content .container {
+    position: relative;
+}
+
+.main-info {
+    max-width: 608px;
+}
+
+.main-info .button {
+    width: 260px;
+}
+
+.main-small-info {
+    background-color: #D3320F;
+    border-radius: 100px;
+    padding: 12px 16px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.main-title {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 120px;
+    text-transform: uppercase;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    margin-bottom: 56px;
+}
+
+.main-text {
+    font-size: 24px;
+    margin-bottom: 56px;
+}
+
+.main-image {
+    position: absolute;
+    top: -123px;
+    left: calc(100% - 991px);
+}
+
+.why {
+    background-image: url("../assets/images/whybg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: initial;
+    padding-bottom: 180px;
+}
+
+.why-items {
+    display: grid;
+    grid-gap: 100px;
+    grid-template-columns: repeat(3, 312px);
+    justify-content: center;
+}
+
+.why-item {
+    text-align: center;
+}
+
+.why-item-title {
+    font-size: 24px;
+    padding: 24px 0;
+}
+
+.why-item-text {
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.products {
+    padding-bottom: 180px;
+    background-image: url('../assets/images/burgers_bg.png');
+    background-repeat: no-repeat;
+    background-size: 1400px;
+    background-position: top center;
+}
+
+.products-items {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(3, 384px);
+    justify-content: center;
+    grid-auto-rows: 564px;
+}
+
+.order {
+    background-image: url('../assets/images/order_bg.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-bottom: 180px;
+    overflow: hidden;
+}
+
+.order .container {
+    position: relative;
+}
+
+.order-image {
+    position: absolute;
+    top: 0;
+    right: calc(100% - 764px);
+    z-index: -1;
+}
+
+.order-title {
+    margin-bottom: 60px;
+}
+
+.order-form {
+    border-radius: 16px;
+    border: 1px solid #353535;
+    background-color: #211A16;
+    width: 426px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin-left: 674px;
+}
+
+.order-form-text {
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 40px;
+}
+
+.order-form-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form-input {
+    width: 344px;
+    height: 62px;
+    background: linear-gradient(95.61deg, rgba(218, 128, 35, 1.00) 0%, rgba(226, 180, 56, 1.00) 100%);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-form-input.error input {
+    background-color: rgb(71, 16, 16);
+    color: white;
+}
+
+
+
+.order-form-input input {
+    padding: 20px 10px;
+    background-color: #211A16;
+    border-radius: 8px;
+    width: 342px;
+    height: 60px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.order-form-input input::placeholder {
+    color: #757575;
+}
+
+.footer {
+    padding: 60px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rights {
+    font-size: 16px;
+}
