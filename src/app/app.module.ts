@@ -5,8 +5,10 @@ import { AppComponent } from './app.component';
 
 import { CardComponent } from './card.component';
 
-import { SomeDataService } from './services/some-data-service.service';
+// import { SomeDataService } from './services/some-data-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,10 +16,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    SomeDataService,
+    // SomeDataService,
   ],
   bootstrap: [AppComponent]
 })

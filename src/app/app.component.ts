@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { SomeDataService } from "./services/some-data-service.service";
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { AppService } from "./services/app.service";
 
 @Component({
   selector: 'app-root',
@@ -11,23 +11,42 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
 
-  scrollTo(target: HTMLElement) {
-    target.scrollIntoView({ behavior: "smooth" });
+  // ----- BACK
+  constructor(private fb: FormBuilder, private appService: AppService) { }
+
+  // productsData = this.someDataService.productsData;
+  productsData = this.appService.productsData;
+
+  ngOnInit() {
+    this.appService.getData().subscribe(data => this.productsData = data);
   }
 
-  scrollToOrder(burger?: any) {
-    if (burger) {
-      this.form.patchValue({ order: burger.title + ' (' + (burger["basePrice"] * this.someDataService.currencyCoef).toFixed(1) + ' ' + this.currency + ')' });
-    }
-
-    let el = document.getElementById("order");
-    if (el != null)
-      this.scrollTo(el);
+  // ----- CURRENCY UODATE
+  changeCurrency() {
+    this.appService.changeCurrency();
   }
 
+  get currency(): string {
+    return this.appService.currency;
+  }
+
+
+  //----- WORK WITH THE FORM ORDER
   confirmOrder() {
     if (this.form.valid) {
-      alert("Спасибо за заказ! Мы с Вами свяжемся!")
+      this.appService.sendOrder(this.form.value)
+        .subscribe(
+          {
+            next: (response: any) => {
+              alert(response.message);
+              this.form.reset();
+            },
+            error: (response) => {
+              alert("response error message")
+            }
+          }
+        );
+      alert("Спасибо за заказ! Мы с Вами свяжемся!");
       this.form.reset();
     }
   }
@@ -38,19 +57,20 @@ export class AppComponent {
     phone: ["", Validators.required]
   })
 
-  constructor(private someDataService: SomeDataService, private fb: FormBuilder) {
 
+  //-----EVENT HADLING
+  scrollTo(target: HTMLElement) {
+    target.scrollIntoView({ behavior: "smooth" });
   }
 
-  productsData = this.someDataService.productsData;
+  scrollToOrder(burger?: any) {
+    if (burger) {
+      this.form.patchValue({ order: burger.title + ' (' + (burger["basePrice"] * this.appService.currencyCoef).toFixed(1) + ' ' + this.currency + ')' });
+    }
 
-  changeCurrency() {
-    this.someDataService.changeCurrency();
+    let el = document.getElementById("order");
+    if (el != null)
+      this.scrollTo(el);
   }
-
-  get currency(): string {
-    return this.someDataService.currency;
-  }
-
 
 }

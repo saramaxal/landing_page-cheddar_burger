@@ -1,6 +1,6 @@
 import { Input, Component, Output, EventEmitter } from "@angular/core";
 
-import { SomeDataService } from "./services/some-data-service.service";
+import { AppService } from "./services/app.service";
 
 @Component({
     selector: "app-card",
@@ -16,15 +16,15 @@ export class CardComponent {
         this.scrollToOrder.emit(this.product);
     }
 
-    constructor(private someDataService: SomeDataService) { }
-    productsData = this.someDataService.productsData;
+    constructor(private appService: AppService) { }
+    productsData = this.appService.productsData;
 
     get currency(): string {
-        return this.someDataService.currency;
+        return this.appService.currency;
     }
 
     get price(): string {
-        return (this.product["basePrice"] * this.someDataService.currencyCoef).toFixed(1);
+        return (this.product["basePrice"] * this.appService.currencyCoef).toFixed(1);
     }
 
 
