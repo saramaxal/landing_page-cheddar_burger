@@ -46,7 +46,6 @@ export class AppComponent {
             }
           }
         );
-      alert("Спасибо за заказ! Мы с Вами свяжемся!");
       this.form.reset();
     }
   }

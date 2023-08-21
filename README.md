@@ -1,5 +1,7 @@
 # Лендинг для БУРГЕР ЧЕДДЕР
 
+Ссылка на лендинг: https://saramaxal.github.io/landing_page-cheddar_burger-angular/
+
 ## Контент:
 - header 
 - 4 блока (включая блок с карточками товаров и оформление заказа)
